@@ -14,15 +14,12 @@ def client():
             yield client
 
 
-#@pytest.mark.api
-@pytest.fixture
 def test_add_declaration(client):
-
     rv = client.post(
         '/add_declaration',
         json={
-            'id_declaration':1,
-            'num_version':1.1,
+            'id_declaration': 1,
+            'num_version': 1.1,
             'date_creation_initiale': 'date_creation_initiale',
             'emetteur': 'emetteur',
             'type_declaration': 'type_declaration',
@@ -43,7 +40,7 @@ def test_add_declaration(client):
     ]
     assert rv.json == expected
 
-@pytest.fixture
+
 def test_get_declaration_by_id(client):
     # add authentification + headers
     rv = client.get(
@@ -51,24 +48,23 @@ def test_get_declaration_by_id(client):
     )
     assert rv.status_code == 200
 
-    #representation_declaration = Mock()
-    #representation_declaration.id_declaration.return_value = 1
-    #representation_declaration.num_version.return_value = 1.1
-    #representation_declaration.date_creation_initiale.return_value = 'date_creation_initiale'
-    #representation_declaration.emetteur.return_value = 'emetteur'
-    #representation_declaration.type_declaration.return_value = 'type_declaration'
-    #representation_declaration.lieu_extraction.return_value = 'lieu_extraction'
-    #representation_declaration.lieu_prise_en_charge.return_value = 'lieu_prise_en_charge'
-    #representation_declaration.lieu_depot.return_value = 'lieu_depot'
-    #representation_declaration.lieu_enfouissement.return_value = 'lieu_enfouissement'
-    #representation_declaration.tonnage.return_value = 42.0
-    #representation_declaration.type_dechet.return_value = 'type_dechet'
-
+    # representation_declaration = Mock()
+    # representation_declaration.id_declaration.return_value = 1
+    # representation_declaration.num_version.return_value = 1.1
+    # representation_declaration.date_creation_initiale.return_value = 'date_creation_initiale'
+    # representation_declaration.emetteur.return_value = 'emetteur'
+    # representation_declaration.type_declaration.return_value = 'type_declaration'
+    # representation_declaration.lieu_extraction.return_value = 'lieu_extraction'
+    # representation_declaration.lieu_prise_en_charge.return_value = 'lieu_prise_en_charge'
+    # representation_declaration.lieu_depot.return_value = 'lieu_depot'
+    # representation_declaration.lieu_enfouissement.return_value = 'lieu_enfouissement'
+    # representation_declaration.tonnage.return_value = 42.0
+    # representation_declaration.type_dechet.return_value = 'type_dechet'
 
     expected = [
         {
-            'id_declaration':1,
-            'num_version':1.1,
+            'id_declaration': 1,
+            'num_version': 1.1,
             'date_creation_initiale': 'date_creation_initiale',
             'emetteur': 'emetteur',
             'type_declaration': 'type_declaration',
@@ -82,6 +78,7 @@ def test_get_declaration_by_id(client):
     ]
     assert rv.json == expected
 
+
 @pytest.fixture
 def test_get_declaration_by_not_found(client):
     # add authentification + headers
@@ -90,12 +87,10 @@ def test_get_declaration_by_not_found(client):
     )
     assert rv.status_code == 404
 
-    #declarationException = Mock()
-    #declarationException.side_effect = Exception('UnknownDeclaration: Unable to find a declaration')
+    # declarationException = Mock()
+    # declarationException.side_effect = Exception('UnknownDeclaration: Unable to find a declaration')
     assert rv.json == {
-            'message': 'UnknownDeclaration: Unable to find a declaration'
-                        'for declaration id 2',
-            'type': 'NOT FOUND'
-        }
-
-
+        'message': 'UnknownDeclaration: Unable to find a declaration'
+                   'for declaration id 2',
+        'type': 'NOT FOUND'
+    }

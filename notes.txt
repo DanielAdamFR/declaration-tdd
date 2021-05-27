@@ -1,0 +1,48 @@
+https://flask.palletsprojects.com/en/1.1.x/testing/
+
+
+https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+
+https://www.thinktocode.com/2018/07/19/ports-and-adapters-architecture/
+
+
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+https://www.cosmicpython.com/book/chapter_04_service_layer.html
+
+https://sites.uclouvain.be/P2SINF/flask/tutorial/tests.html
+
+
+
+id_declaration = 0
+# ID : <unique sur l'ensemble du domaine>, numéro index de version <entier positif, valeur initiale 0>
+date_creation_initiale = "20/07/1998"
+# Date de création initiale : jj/mm/aaaa
+emetteur = "emetteur"
+# Emetteur : <raison sociale de l'entreprise émettrice>
+type_declaration = "extraction"
+# Type(s) de déclaration :
+# - extraction/transport et/ou enfouissage ( verifier )
+# - extraction + transport + enfouissage
+# - extraction + transport
+# - enfouissage
+lieu_extraction = "lieu_extraction"
+# Lieu d'extraction
+lieu_prise_en_charge = "lieu_extraction_different"
+# Lieu de prise en charge <si différent du lieu d'extraction>
+lieu_depot = "lieu_depot"
+# Lieu de dépôt
+lieu_enfouissement = "lieu_enfouissement"
+# Lieu d'enfouissement <si différent du lieu de dépôt>
+tonnage = 40.6
+# Tonnage <nombre décimal précision 1 exemple: 40.6>
+type_dechet = "sol non pollué"
+# Type de déchet :
+# - sol non pollué
+# - sol pollué (non dangereux)
+# - sol pollué (dangereux)
+
+# Lieu enfouissement doit etre != du lieu de depot
+# Lieu de prise en charge doit etre != du lieu d'extraction
+# tonnage doit etre écimal précision 1 exemple: 40.6
+# type dechet 3 solutions possibles
+# date creation initiale doit avoir cette casse JJ/MM/YYYY

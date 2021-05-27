@@ -79,7 +79,6 @@ def test_get_declaration_by_id(client):
     assert rv.json == expected
 
 
-@pytest.fixture
 def test_get_declaration_by_not_found(client):
     # add authentification + headers
     rv = client.get(
